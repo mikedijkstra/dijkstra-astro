@@ -9,9 +9,7 @@ const navItems: { route: string; label: string }[] = [
 ];
 
 function isActive(route: string, currentPath: string): boolean {
-  return route.length > 1
-    ? currentPath.includes(route)
-    : currentPath.endsWith(route);
+  return route === "/" ? currentPath === "/" : currentPath.startsWith(route);
 }
 
 const currentPath: string = Astro.url.pathname;
