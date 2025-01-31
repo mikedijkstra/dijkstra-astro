@@ -1,0 +1,109 @@
+---
+import Logo from "./Logo.astro";
+
+const { logo } = Astro.props;
+
+const navItems: { route: string; label: string }[] = [
+  { route: "/", label: "About" },
+  { route: "/work", label: "Work" },
+];
+
+function isActive(route: string, currentPath: string): boolean {
+  return route.length > 1
+    ? currentPath.includes(route)
+    : currentPath.endsWith(route);
+}
+
+const currentPath: string = Astro.url.pathname;
+---
+
+<header
+  x-data="{ open: false }"
+  class="sticky top-0 bg-opacity-95 bg-[rgba(var(--nav-rgb),0.95)] flex items-center p-4 z-10 text-2xl"
+>
+  {
+    logo ? (
+      <figure id="header-logo" class="p-2">
+        <a href="/" class="flex items-center gap-2">
+          <div class="relative w-24">
+            <Logo />
+          </div>
+        </a>
+      </figure>
+    ) : null
+  }
+
+  <nav class="hidden lg:flex ml-auto">
+    <ul class="flex gap-4 p-2">
+      {
+        navItems.map(({ route, label }) => (
+          <li>
+            <a
+              href={route}
+              class={`link ${isActive(route, currentPath) ? "current" : ""}`}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div class="ml-auto flex items-center lg:hidden">
+    <button
+      @click="open = !open"
+      class="flex items-center gap-2 p-2 cursor-pointer"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      Menu
+    </button>
+  </div>
+
+  <nav
+    x-show="open"
+    x-cloak
+    @click="open = false"
+    class="lg:hidden text-lg text-center fixed inset-0 bg-opacity-95 bg-[rgba(var(--nav-rgb),0.95)] overflow-auto z-10"
+  >
+    <ul class="p-4 flex flex-col gap-4">
+      {
+        navItems.map(({ route, label }) => (
+          <li>
+            <a
+              href={route}
+              class={`hover:underline ${isActive(route, currentPath) ? "font-bold" : ""}`}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  document.body.classList.add("no-touch");
+
+  window.addEventListener(
+    "touchstart",
+    function onFirstTouch() {
+      document.body.classList.remove("no-touch");
+      window.removeEventListener("touchstart", onFirstTouch, false);
+    },
+    false,
+  );
+</script>

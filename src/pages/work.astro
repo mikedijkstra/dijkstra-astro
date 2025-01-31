@@ -1,0 +1,300 @@
+---
+import SiteNav from "../components/SiteNav.astro";
+import "../styles/global.css";
+
+const WORK = [
+  {
+  date: ["2024", ""],
+    company: "Grade",
+    role: "Full-time",
+    lede: "Senior Software Developer, making digital products for good.",
+    tags: ["Vue", "Storyblok", "Node.JS", "TypeScript", "Vercel", "AWS", "Stripe"],
+  },
+  {
+    date: ["2023", "2024"],
+    company: "Climate Salad",
+    role: "Full-time",
+    lede: "Product and Platform developer leading the design and build of a new member and data platform.",
+    tags: ["Design", "React", "Remix", "TypeScript", "AWS", "Stripe", "Airtable"],
+  },
+  {
+    date: ["2023"],
+    company: "Dr Verinder Sidhu",
+    role: "Freelance",
+    lede: "Design and development of a new website for orthopaedic surgeon Dr Verinder Sidhu.",
+    tags: ["Design", "React", "Next.JS", "TypeScript", "Vercel"],
+  },
+  {
+    date: ["2022"],
+    company: "Alta",
+    role: "Full-time",
+    lede: "Platform developer for all web and desktop front-ends that support the A Township Tale VR game.",
+    tags: ["React", "Remix", "TypeScript", "Electron", "Vercel", "Xsolla", "Strapi", "GitHub Actions", "Cypress", "Vitest", "SES"],
+  },
+  {
+    date: ["2022"],
+    company: "Play Together",
+    role: "Project",
+    lede: "A web application to keep public playlists on Spotify clean with Remix and hosted on Supabase.",
+    tags: ["Remix", "TypeScript", "Supabase", "GitHub Actions"],
+  },
+  {
+    date: ["2019", "2022"],
+    company: "Calibre",
+    role: "Full-time",
+    lede: "Platform Developer for an automated website site speed performance testing company.",
+    tags: ["Ruby on Rails", "Rspec", "Postgres", "React", "TypeScript", "Heroku", "AWS", "Stripe", "Terraform", "Next.JS", "GitHub Actions"],
+  },
+  {
+    date: ["2014", "2021"],
+    company: "Small Victories",
+    role: "Co-founder",
+    lede: "Co-Founder and CTO of a SaaS platform that allowed users to create websites from Dropbox folders.",
+    tags: ["Ruby on Rails", "Postgres", "AWS", "Heroku", "Dropbox", "Stripe", "Mandrill"],
+  },
+  {
+    date: ["2021"],
+    company: "Holly Stevenson",
+    role: "Freelance",
+    lede: "Development of Holly's portfolio website, designed by Holly.",
+    tags: ["Wordpress", "PHP", "MySQL"],
+  },
+  {
+    date: ["2014", "2019"],
+    company: "Wise",
+    role: "Co-founder",
+    lede: "Co-Founder and CTO of a SaaS application and accompanying mobile applications that made it easy for teams to share reading lists.",
+    tags: ["Ruby on Rails", "Rspec", "Ember", "Postgres", "Swift", "Python", "Mandrill"],
+  },
+  {
+    date: ["2019"],
+    company: "Spot Parking",
+    role: "Freelance",
+    lede: "User Experience and visual design with subsequent development of map interface.",
+    tags: ["JavaScript"],
+  },
+  {
+    date: ["2018"],
+    company: "Q-CTRL",
+    role: "Full-time",
+    lede: "Lead Front-end Engineer on new Black Opal platform. Built with React and Firebase.",
+    tags: ["React", "Node.JS", "Firebase", "Jest", "Stripe"],
+  },
+  {
+    date: ["2018"],
+    company: "Dr Bill Bye",
+    role: "Freelance",
+    lede: "Website design and development.",
+    tags: ["Next.JS", "Vercel", "MapBox"],
+  },
+  {
+    date: ["2017"],
+    company: "Rough Trade",
+    role: "Freelance",
+    lede: "New feature development for a record store ecommerce application",
+    tags: ["Ruby on Rails", "Postgres", "Stripe", "Rspec"],
+  },
+  {
+    date: ["2017"],
+    company: "BuzzFeed",
+    role: "Freelance",
+    lede: "Internal branding guidelines website development.",
+    tags: ["React", "Siteleaf", "GitHub Pages"],
+  },
+  {
+    date: ["2014", "2017"],
+    company: "Wevther",
+    role: "Collaboration",
+    lede: "A web and mobile application to show you good products for today's weather",
+    tags: ["Ruby on Rails", "Postgres", "Rubymotion", "Ember.JS"],
+  },
+  {
+    date: ["2014", "2017"],
+    company: "Eye on Design",
+    role: "Freelance",
+    lede: "Wordpress website development.",
+    tags: ["Wordpress", "PHP", "MySQL"],
+  },
+  {
+    date: ["2013", "2017"],
+    company: "Storq",
+    role: "Freelance",
+    lede: "Ecommerce store.",
+    tags: ["Shopify", "Liquid"],
+  },
+  {
+    date: ["2013", "2017"],
+    company: "SerialBox",
+    role: "Freelance",
+    lede: "Platform and iOS development for a digital and audio book subscription service.",
+    tags: ["Ruby on Rails", "Postgres", "Swift (iOS)", "Python", "Stripe"],
+  },
+  {
+    date: ["2015", "2016"],
+    company: "Franke",
+    role: "Co-founder",
+    lede: "Co-Founder and CTO of a SaaS application that allowed users to send emails directly into Slack channels.",
+    tags: ["Ruby on Rails", "Slack", "Postgres", "Stripe", "Heroku", "Rspec", "Mandrill"],
+  },
+  {
+    date: ["2013", "2014"],
+    company: "PwC Australia",
+    role: "Full-time",
+    lede: "Head of Product (Digital Ventures).",
+    tags: [],
+  },
+  {
+    date: ["2017"],
+    company: "Wade Jeffree",
+    role: "Freelance",
+    lede: "Website development.",
+  },
+  {
+    date: ["2017"],
+    company: "Le-Turtle",
+    role: "Freelance",
+    lede: "Website development.",
+  },
+  {
+    date: ["2017"],
+    company: "Antfood",
+    role: "Freelance",
+    lede: "Website development.",
+  },
+  {
+    date: ["2017"],
+    company: "Baggu",
+    role: "Freelance",
+    lede: "Website development.",
+  },
+  {
+    date: ["2017"],
+    company: "AYR",
+    role: "Freelance",
+    lede: "Shopify website development.",
+  },
+  {
+    date: ["2017"],
+    company: "Kidtech",
+    role: "Freelance",
+    lede: "Website development.",
+  },
+  {
+    date: ["2017"],
+    company: "Aida",
+    role: "Freelance",
+    lede: "Shopify website development.",
+  },
+  {
+    date: ["2016"],
+    company: "Pharrell / i am OTHER",
+    role: "Freelance",
+    lede: "Custom email development.",
+  },
+  {
+    date: ["2015"],
+    company: "Grilli Type",
+    role: "Freelance",
+    lede: "Website and custom email development.",
+  },
+  {
+    date: ["2015"],
+    company: "Greenhouse",
+    role: "Freelance",
+    lede: "Hubspot website development.",
+  },
+  {
+    date: ["2014"],
+    company: "Booby",
+    role: "Collaboration",
+    lede: "A fun interactive site.",
+  },
+  {
+    date: ["2014"],
+    company: "Keep Smiling",
+    role: "Collaboration",
+    lede: "An iOS game where you have to keep smiling!",
+  },
+  {
+    date: ["2013", "2014"],
+    company: "PWC Australia",
+    role: "Head of Product",
+    lede: "Ran the Digital Ventures department.",
+  },
+  {
+    date: ["2012", "2013"],
+    company: "Storyberg",
+    role: "Co-founder",
+    lede: "Lean Product Management startup (accepted into Startmate).",
+  },
+  {
+    date: ["2011", "2012"],
+    company: "Pollenizer",
+    role: "Full-time",
+    lede: "Lean Product Manager on Wooboard, Pygg, Unrenovated and Pollenizer.",
+  },
+  {
+    date: ["2010", "2012"],
+    company: "Ninety9 Bottles",
+    role: "Co-founder",
+    lede: "Online wine store.",
+  },
+];
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      Michael Dijkstra's Work - Senior Product and Software Developer
+    </title>
+
+    <style>
+      :root {
+        --nav-rgb: 35, 31, 22;
+      }
+    </style>
+  </head>
+
+  <body class="bg-eerie text-white font-sans">
+    <SiteNav logo="true" />
+    <div class="space-y-24 py-24 px-6">
+      <div class="max-w-6xl text-8xl leading-24 mx-auto space-y-6 text-center">
+        <h1>
+          I have designed, developed and managed digital products with companies
+          all over the world.
+        </h1>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="space-y-24">
+          {
+          WORK.map(({ date, role, company, lede, tags }) => (
+              <div>
+                <div class="space-y-4 grid md:grid-cols-8">
+                  <div class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block">
+                    <div class="flex-1">{date[0]}{date[1] ? `–${date[1]}` : ''}</div>
+                    <div>{role}</div>
+                  </div>
+                  <div class="md:col-span-5 space-y-1">
+                  <h2 class="text-3xl">{company}</h2>
+                  <p class="text-2xl">{lede}</p>
+                  {tags ? <div class="flex flex-wrap gap-2 mt-4">
+                    {tags.map((tag) => {
+                    return (<span class="text-xl whitespace-nowrap">{tag}</span> <span class="text-xl last-of-type:hidden">&bull;</span>)
+                    })}
+                  </div> : null}
+                  </div> 
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

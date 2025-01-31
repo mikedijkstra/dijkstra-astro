@@ -1,1 +1,74 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-crimson: #eb0052;
+  --color-muted: #6c757d;
+  --color-gulf: #03115b;
+  --color-white: #ffffff;
+  --color-torch: #fc0c1b;
+  --color-eerie: #231f16;
+  --color-error: rgb(255, 0, 0);
+  --color-body-highlight: rgba(255, 255, 255, 0.05);
+  --color-body-highlight-focus: rgba(255, 255, 255, 0.1);
+
+  --font-sans: "Anarchy-Book", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-serif: serif;
+  --font-mono: monospace;
+
+  --site-width: 90vw;
+  --site-max-width: 1560px;
+  --site-content-width: max(320px - var(--space-0), 74rem);
+  --editorial-width: max(320px - var(--space-0), 60rem);
+  --nav-height: 60px;
+  --nav-rgb: 3, 17, 91;
+  --body-rgb: 3, 17, 91;
+
+  --text-
+}
+
+@font-face {
+  font-family: "Anarchy-Book";
+  font-weight: 300;
+  src: url("/public/fonts/Anarchy-Book.woff2") format("woff2");
+  font-display: swap;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.link {
+  color: inherit;
+  display: inline-block;
+  line-height: 1.5;
+  position: relative;
+  text-decoration: none;
+}
+
+.link:after,
+.link:before {
+  background-color: currentColor;
+  bottom: -0.08em;
+
+  content: "";
+  display: block;
+  height: 0.08em;
+  left: 0;
+  position: absolute;
+  transition: 0.15s ease-in-out;
+  width: 0;
+}
+
+.link:before {
+  width: 100%;
+}
+
+.link.current:before {
+  background-color: transparent;
+}
+
+body.no-touch .link:hover:before {
+  margin-left: 100%;
+  width: 0;
+}
