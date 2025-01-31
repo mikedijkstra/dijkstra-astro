@@ -12,7 +12,5 @@ export default defineConfig({
 
   integrations: [alpinejs()],
 
-  site: "https://mikedijkstra.github.io",
-  base: "/dijkstra-astro",
+  site: "https://dijkstra.com.au",
 });
-
