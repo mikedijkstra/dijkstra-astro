@@ -6,6 +6,7 @@ const { logo } = Astro.props;
 const navItems: { route: string; label: string }[] = [
   { route: "/", label: "About" },
   { route: "/work", label: "Work" },
+  { route: "/contact", label: "Contact" },
 ];
 
 function isActive(route: string, currentPath: string): boolean {
