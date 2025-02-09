@@ -1,95 +1,67 @@
 ---
-import SiteNav from "../components/SiteNav.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>
-      Michael Dijkstra's Secret Archive - Senior Product and Software Developer
-    </title>
+<BaseLayout
+  pageTitle="Michael Dijkstra's Secret Archive - Product Designer and Software Developer"
+  logo="true"
+  bodyClass="bg-torch text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-6 text-center">
+      <h1>Archive</h1>
+    </div>
 
-    <style>
-      :root {
-        --nav-rgb: 252, 12, 27;
-      }
+    <div class="max-w-6xl mx-auto">
+      <div class="space-y-24">
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://micdijkstra.github.io/Booby/"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
 
-      iframe {
-        height: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-        width: 100%;
-      }
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://micdijkstra.github.io/franke-emoji/"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
 
-      .wrapper {
-        position: relative;
-        height: 0;
-        padding-block-end: min(80vh, 80%);
-      }
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://micdijkstra.github.io/keep-smiling-web/"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
 
-      .wrapper.video {
-        padding-block-end: 60%;
-      }
-    </style>
-  </head>
+        <div class="iframe-wrapper video">
+          <iframe
+            src="https://player.vimeo.com/video/164954943?autoplay=1"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
 
-  <body class="bg-torch text-white font-sans">
-    <SiteNav logo="true" />
-    <div class="space-y-24 py-24 px-6">
-      <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-6 text-center">
-        <h1>The Secret Archive</h1>
-      </div>
+        <div class="iframe-wrapper video">
+          <iframe
+            src="https://player.vimeo.com/video/75466823?h=a5d6711124?autoplay=1"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
 
-      <div class="max-w-6xl mx-auto">
-        <div class="space-y-24">
-          <div class="wrapper">
-            <iframe
-              src="https://micdijkstra.github.io/Booby/"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-
-          <div class="wrapper">
-            <iframe
-              src="https://micdijkstra.github.io/franke-emoji/"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-
-          <div class="wrapper">
-            <iframe
-              src="https://micdijkstra.github.io/keep-smiling-web/"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-
-          <div class="wrapper video">
-            <iframe
-              src="https://player.vimeo.com/video/164954943?autoplay=1"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-
-          <div class="wrapper video">
-            <iframe
-              src="https://player.vimeo.com/video/75466823?h=a5d6711124?autoplay=1"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-
-          <div class="wrapper video">
-            <iframe
-              src="https://player.vimeo.com/video/76003931?autoplay=1&loop=1?autoplay=1"
-              allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
+        <div class="iframe-wrapper video">
+          <iframe
+            src="https://player.vimeo.com/video/76003931?autoplay=1&loop=1?autoplay=1"
+            allowfullscreen=""
+            loading="lazy"></iframe>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 252, 12, 27;
+  }
+</style>

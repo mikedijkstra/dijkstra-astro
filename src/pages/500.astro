@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<BaseLayout
+  pageTitle="Michael Dijkstra can't find this page!"
+  logo="true"
+  bodyClass="bg-torch text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6 flex justify-center items-center">
+    <div
+      class="max-w-6xl text-9xl leading-relaxed mx-auto space-y-6 text-center"
+    >
+      <h2>Something<br />went<br />wrong</h2>
+      <p>{error instanceof Error ? error.message : "Unknown error"}</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 252, 12, 27;
+  }
+</style>

@@ -1,0 +1,266 @@
+---
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  pageTitle="A Township Tale by Michael Dijkstra - Product Designer and Software Developer"
+  logo="true"
+  bodyClass="bg-[#170b05] text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">
+        A Township Tale
+      </h1>
+
+      <div class="w-full border-white/80 p-6">
+        <video
+          class="block w-full max-w-full h-auto"
+          src="/videos/townshiptale.mp4"
+          height="827"
+          width="1792"
+          autoplay></video>
+        <figcaption class="text-2xl mt-3">
+          a. The Township Tale Tavern
+        </figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">A Township Tale</h2>
+          <p class="text-2xl">
+            As Lead Front-end Engineer for Alta I was responsible for all the
+            user facing applications used by players and staff for their
+            flagship game, A Township Tale.
+          </p>
+
+          <p class="text-2xl">
+            The Township Tavern, a companion application for A Township Tale,
+            was a new project I wireframed, designed and developed which allows
+            players to view the latest store rotations, purchase virtual
+            currency and cosmetics, discover and manage game servers, manage
+            their friend lists and manage their account.
+          </p>
+
+          <p class="text-2xl">
+            Wireframes and designs were done in Figma, the application was built
+            using React, Remix, Cypress, Tailwind and I worked closesly with the
+            Platform API developers during development to implement new
+            endpoints required for the features we wanted to support.
+          </p>
+
+          <p class="text-2xl">
+            The HQ was a complete rebuild of an internal dashboard application.
+            This application was also wireframed, designed and developed in
+            Figma and built using React, Remix and Tailwind.
+          </p>
+
+          <p class="text-2xl">
+            The Game Launcher was an existing Electron application which I
+            upgraded from version 4 to version 18 while also updating the design
+            and adding new features.
+          </p>
+
+          <p class="text-2xl">
+            The marketing website was an existing Next.js application which I
+            maintained and updated as required.
+          </p>
+
+          <p class="text-2xl">
+            I also setup an image proxy which leveraged caching on Vercel to
+            retrieve and serve images from the Township Tale API and Google
+            Cloud Storage.
+          </p>
+
+          <p class="text-2xl">
+            To support the various front-end applications I created two
+            supporting libraries. The first was a React Component Library which
+            was developed using Storybook, bundled with rollup.js and imported
+            into each application. The second was an API Client library which
+            was developed in Typescript and bundled with rollup.js and used to
+            interact with the Township Tale API in each application.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <h3 class="text-3xl">Project Gallery</h3>
+
+          <div>
+            <img
+              class="block w-full max-w-full h-auto"
+              src="/images/townshiptale-figma.png"
+              alt="Screenshot of Figma wireframes for ATT designs"
+              loading="lazy"
+              width="2332"
+              height="1897"
+            />
+            <figcaption class="text-2xl mt-3">b. Figma wireframes</figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-full h-auto"
+              src="/images/hq-server-desktop.png"
+              alt="Screenshot of HQ server desktop"
+              loading="lazy"
+              width="1680"
+              height="1050"
+            />
+            <figcaption class="text-2xl mt-3">
+              c. HQ server management
+            </figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-full h-auto"
+              src="/images/hq-control.png"
+              alt="Screenshot of HQ server desktop controls"
+              loading="lazy"
+              width="1680"
+              height="1050"
+            />
+            <figcaption class="text-2xl mt-3">d. HQ server controls</figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-full h-auto"
+              src="/images/hq-server-light.png"
+              alt="Screenshot HQ server light theme"
+              loading="lazy"
+              width="1680"
+              height="1050"
+            />
+            <figcaption class="text-2xl mt-3">
+              e. HQ server (light theme)
+            </figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-full h-auto"
+              src="/images/townshiptale-launcher.png"
+              alt="Screenshot of ATT Desktop Launcher application"
+              loading="lazy"
+              width="1392"
+              height="679"
+            />
+            <figcaption class="text-2xl mt-3">
+              f. ATT launcher application
+            </figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-sm mx-auto h-auto"
+              src="/images/console-phone.png"
+              alt="Screenshot of Server Console on mobile"
+              loading="lazy"
+              width="827"
+              height="1792"
+            />
+            <figcaption class="text-2xl mt-3">g. Server console</figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-sm mx-auto h-auto"
+              src="/images/profile-mobile.png"
+              alt="Screenshot of Server Console on mobile"
+              loading="lazy"
+              width="827"
+              height="1792"
+            />
+            <figcaption class="text-2xl mt-3">h. Server console</figcaption>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-3xl">How it works</h3>
+
+          <img
+            class="block w-full max-w-full h-auto"
+            src="/images/township-architecture.svg"
+            alt="Township Tale Architecture"
+            loading="lazy"
+            width="790"
+            height="1007"
+          />
+          <figcaption class="text-2xl mt-3">
+            i. Software Architecture diagram
+          </figcaption>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Product Design</li>
+              <li>Software Development</li>
+              <li>Product Management</li>
+            </ul>
+          </dd>
+        </dl>
+
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Tech</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>React</li>
+              <li>Remix</li>
+              <li>TypeScript</li>
+              <li>Node</li>
+              <li>GitHub Actions</li>
+              <li>Cypress</li>
+              <li>Electron</li>
+              <li>Vercel</li>
+              <li>Strapi</li>
+              <li>Xsolla</li>
+              <li>GCP</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/wise",
+            title: "Wise",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Email",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 23, 11, 5;
+  }
+</style>

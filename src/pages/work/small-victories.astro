@@ -1,0 +1,151 @@
+---
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  pageTitle="Small Victories by Michael Dijkstra - Product Designer and Software Developer"
+  logo="true"
+  bodyClass="bg-black text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">
+        Small Victories
+      </h1>
+
+      <div class="w-full border-white/80 p-6">
+        <img
+          class="block w-full max-w-full h-auto"
+          src="/images/SV_Home.png"
+          alt="Small Victories homepage"
+          height="1200"
+          width="1700"
+        />
+        <figcaption class="text-2xl mt-3">
+          a. Small Victories homepage
+        </figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">A Small Victory</h2>
+          <p class="text-2xl">
+            Small Victories was a company I co-founded with
+            <a href="http://jacobheftmann.com/" class="link">Jacob Heftmann</a> and
+            <a href="http://www.thankseverybody.com/" class="link"
+              >Jake Hobart</a
+            >
+            which took files in a Dropbox folder and turned them into a website.
+          </p>
+
+          <p class="text-2xl">
+            Built on Ruby on Rails, Small Victories communicated with Dropbox
+            via webhooks and the Dropbox API to automatically build websites
+            based on a theme text file and the files in a folder.
+          </p>
+
+          <p class="text-2xl">
+            When a user updated a file in one of their Small Victories sites
+            folder, Small Victories automatically rebuilt their site. Users
+            could choose from 10 different themes, setup a custom domain and
+            even password protect their site.
+          </p>
+
+          <p class="text-2xl">
+            Small Victories was hosted on Heroku with Postgres and then migrated
+            to AWS, making use of RDS Postgres, ElastiCache, SQS and Elastic
+            Beanstalk.
+          </p>
+
+          <p class="text-2xl">
+            Before shutting down Small Victories I was working on a newer,
+            faster version in Go, however it was never released.
+          </p>
+
+          <p class="text-2xl">
+            Small Victories had over 10,000 users and 10,000 sites.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-3xl">How it works</h3>
+
+          <img
+            class="block w-full max-w-full h-auto"
+            src="/images/sv-architecture.svg"
+            alt="Small Victories Architecture"
+            loading="lazy"
+            width="801"
+            height="702"
+          />
+          <figcaption class="text-2xl mt-3">
+            b. Software Architecture diagram
+          </figcaption>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Software Development</li>
+              <li>Product Management</li>
+            </ul>
+          </dd>
+        </dl>
+
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Tech</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Ruby on Rails</li>
+              <li>Dropbox</li>
+              <li>Stripe</li>
+              <li>AWS</li>
+              <li>Heroku</li>
+              <li>Rspec</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/climate-salad",
+            title: "Climate Salad",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Email",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 0, 0, 0;
+  }
+</style>

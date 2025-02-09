@@ -1,0 +1,38 @@
+---
+import ArrowRight from "./ArrowRight.astro";
+
+export interface Link {
+  url: string;
+  title: string;
+  description: string;
+  hidden?: boolean;
+}
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto relative text-2xl space-y-6 lg:pl-14">
+  {
+    links.map((link) => (
+      <a
+        class:list={[
+          "group block duration-300 ease-out",
+          { "opacity-0 hover:opacity-100": link.hidden },
+        ]}
+        href={link.url}
+      >
+        <div class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out pr-12">
+          <p class="mb-2 leading-relaxed">{link.title}</p>
+          <p class="leading-relaxed">{link.description}</p>
+          <div class="absolute right-6 group-hover:right-4 w-6 top-8 sm:top-1/2 sm:-translate-y-1/2 duration-300 ease-out">
+            <ArrowRight />
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>

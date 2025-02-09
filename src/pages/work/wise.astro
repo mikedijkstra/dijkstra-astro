@@ -1,0 +1,183 @@
+---
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  pageTitle="Wise by Michael Dijkstra - Product Designer and Software Developer"
+  logo="true"
+  bodyClass="bg-[#a05be1] text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">Wise</h1>
+
+      <div class="w-full border-white/80 p-6">
+        <img
+          class="block w-full max-w-full h-auto"
+          src="/images/wise-desktop.png"
+          height="1201"
+          width="1698"
+          alt="Climate Salad Directory Screenshot"
+        />
+        <figcaption class="text-2xl mt-3">a. Wise Desktop</figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">Shared reading lists for teams</h2>
+          <p class="text-2xl">
+            Wise is a company I co-founded with Tim Howard through Front Row
+            Ventures.
+          </p>
+
+          <p class="text-2xl">
+            Wise has been through three major iterations. The first was a
+            Twitter only version where organisations could create a shared
+            reading list for their team. Wise would record what a user had read
+            and this could be used towards their accreditation.
+          </p>
+
+          <p class="text-2xl">
+            The second iteration of Wise enabled organisations and companies to
+            create a culture of continuous learning. Targetting associations of
+            certified public accountants we launched an iOS app, Android app,
+            Ruby on Rails API and a Ember.js web application. The mobile
+            applications were for end users while the Ember.js application was
+            for learning adminstrators to curate reading lists and analyse
+            reports. Wise would record articles users read and track this
+            against their reading goal. In addition we developed an
+            recommendation engine which would analyse and classify articles
+            shared through Wise and recommend other relevant articles to list
+            administrators.
+          </p>
+
+          <p class="text-2xl">
+            The third and current iteration of Wise is a Slack only shared
+            reading list. We took the basic elements from the previous version
+            and simplified it to create an easy way for teams to share
+            interesting articles.
+          </p>
+
+          <p class="text-2xl">
+            I developed the first version of Wise as a Ruby on Rails application
+            which connected to Twitter for authentication and the streaming API.
+          </p>
+
+          <p class="text-2xl">
+            For the second version of Wise I developed the iOS application in
+            Swift, the API in Ruby on Rails and the adminstrator dashboard in
+            Ember.js. The recommendation was a combination of Ruby and Python as
+            there was better support for article ingestion and classification in
+            Python. I oversaw the outsourced development of the Android
+            application.
+          </p>
+
+          <p class="text-2xl">
+            The current version of Wise has been built with the help of Artan
+            Sinani and is a Ruby on Rails application with a Python content
+            parser, this is the same technology used in the previous versions
+            recommendation engine.
+          </p>
+
+          <p class="text-2xl">
+            All versions of Wise have been hosted on Heroku and use Circle CI
+            for continuous integration.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <h3 class="text-3xl">Project Gallery</h3>
+
+          <div>
+            <img
+              class="block w-full max-w-sm mx-auto h-auto"
+              src="/images/wise-mobile.png"
+              alt="Screenshot of wise on mobile"
+              loading="lazy"
+              width="497"
+              height="491"
+            />
+            <figcaption class="text-2xl mt-3">
+              b. Wise iOS application
+            </figcaption>
+          </div>
+
+          <div>
+            <img
+              class="block w-full max-w-md mx-auto h-auto"
+              src="/images/wise-email.png"
+              alt="Screenshot Wise email"
+              loading="lazy"
+              width="620"
+              height="938"
+            />
+            <figcaption class="text-2xl mt-3">c. Wise email</figcaption>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Software Development</li>
+              <li>Product Management</li>
+            </ul>
+          </dd>
+        </dl>
+
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Tech</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>iOS (Swift)</li>
+              <li>Ruby on Rails</li>
+              <li>Ember.JS</li>
+              <li>Rspec</li>
+              <li>Heroku</li>
+              <li>Circle CI</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/franke",
+            title: "Franke",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Email",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 160, 91, 225;
+  }
+</style>

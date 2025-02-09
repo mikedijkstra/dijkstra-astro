@@ -30,7 +30,7 @@
 @font-face {
   font-family: "Anarchy-Book";
   font-weight: 300;
-  src: url("/public/fonts/Anarchy-Book.woff2") format("woff2");
+  src: url("/fonts/Anarchy-Book.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -61,14 +61,42 @@
 }
 
 .link:before {
-  width: 100%;
+  margin-left: 100%;
 }
 
 .link.current:before {
-  background-color: transparent;
+  background-color: currentColor;
+  margin-left: 0;
+  width: 100%;
 }
 
-body.no-touch .link:hover:before {
+body.no-touch nav:hover .link.current:before,
+body.no-touch .link.current:hover:before {
   margin-left: 100%;
   width: 0;
+}
+
+body.no-touch nav:hover .link.current:hover:before,
+body.no-touch .link:hover:before {
+  background-color: currentColor;
+  width: 100%;
+  margin-left: 0;
+}
+
+iframe {
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.iframe-wrapper {
+  position: relative;
+  height: 0;
+  padding-block-end: min(80vh, 80%);
+}
+
+.iframe-wrapper.video {
+  padding-block-end: 60%;
 }

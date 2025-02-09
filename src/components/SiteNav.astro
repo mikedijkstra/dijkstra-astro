@@ -74,15 +74,15 @@ const currentPath: string = Astro.url.pathname;
     x-show="open"
     x-cloak
     @click="open = false"
-    class="lg:hidden text-lg text-center fixed inset-0 bg-opacity-95 bg-[rgba(var(--nav-rgb),0.95)] overflow-auto z-10"
+    class="lg:hidden text-lg text-center fixed inset-0 bg-opacity-95 bg-[rgba(var(--nav-rgb),0.99)] overflow-auto z-10"
   >
-    <ul class="p-4 flex flex-col gap-4">
+    <ul class="px-4 py-24 flex flex-col gap-4 text-4xl space-y-12">
       {
         navItems.map(({ route, label }) => (
           <li>
             <a
               href={route}
-              class={`hover:underline ${isActive(route, currentPath) ? "font-bold" : ""}`}
+              class={`link ${isActive(route, currentPath) ? "current" : ""}`}
             >
               {label}
             </a>
