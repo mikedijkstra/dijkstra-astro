@@ -1,6 +1,10 @@
 ---
+import { Picture } from "astro:assets";
 import LinkList from "../../components/LinkList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import wiseDesktop from "../../assets/wise-desktop.png";
+import wiseMobile from "../../assets/wise-mobile.png";
+import wiseEmail from "../../assets/wise-email.png";
 ---
 
 <BaseLayout
@@ -13,11 +17,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">Wise</h1>
 
       <div class="w-full border-white/80 p-6">
-        <img
+        <Picture
           class="block w-full max-w-full h-auto"
-          src="/images/wise-desktop.png"
-          height="1201"
-          width="1698"
+          src={wiseDesktop}
           alt="Climate Salad Directory Screenshot"
         />
         <figcaption class="text-2xl mt-3">a. Wise Desktop</figcaption>
@@ -92,13 +94,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3 class="text-3xl">Project Gallery</h3>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-sm mx-auto h-auto"
-              src="/images/wise-mobile.png"
+              src={wiseMobile}
               alt="Screenshot of wise on mobile"
-              loading="lazy"
-              width="497"
-              height="491"
             />
             <figcaption class="text-2xl mt-3">
               b. Wise iOS application
@@ -106,13 +105,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-md mx-auto h-auto"
-              src="/images/wise-email.png"
+              src={wiseEmail}
               alt="Screenshot Wise email"
-              loading="lazy"
-              width="620"
-              height="938"
             />
             <figcaption class="text-2xl mt-3">c. Wise email</figcaption>
           </div>
@@ -167,7 +163,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           },
           {
             url: "/contact",
-            title: "Email",
+            title: "Contact",
             description: "Have a project to discuss? Get in touch.",
           },
         ]}

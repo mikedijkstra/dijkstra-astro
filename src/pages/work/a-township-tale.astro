@@ -1,6 +1,15 @@
 ---
+import { Picture } from "astro:assets";
+import Image from "astro/components/Image.astro";
 import LinkList from "../../components/LinkList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import townshiptaleFigma from "../../assets/townshiptale-figma.png";
+import townshiptaleHQ from "../../assets/townshiptale-hq.png";
+import townshiptaleHQControls from "../../assets/townshiptale-hq-controls.png";
+import townshiptaleHQLight from "../../assets/townshiptale-hq-light.png";
+import townshiptaleLauncher from "../../assets/townshiptale-launcher.png";
+import townshiptaleConsole from "../../assets/townshiptale-console.png";
+import townshiptaleProfile from "../../assets/townshiptale-profile.png";
 ---
 
 <BaseLayout
@@ -89,25 +98,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3 class="text-3xl">Project Gallery</h3>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/townshiptale-figma.png"
+              src={townshiptaleFigma}
               alt="Screenshot of Figma wireframes for ATT designs"
-              loading="lazy"
-              width="2332"
-              height="1897"
             />
             <figcaption class="text-2xl mt-3">b. Figma wireframes</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/hq-server-desktop.png"
+              src={townshiptaleHQ}
               alt="Screenshot of HQ server desktop"
-              loading="lazy"
-              width="1680"
-              height="1050"
             />
             <figcaption class="text-2xl mt-3">
               c. HQ server management
@@ -115,25 +118,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/hq-control.png"
+              src={townshiptaleHQControls}
               alt="Screenshot of HQ server desktop controls"
-              loading="lazy"
-              width="1680"
-              height="1050"
             />
             <figcaption class="text-2xl mt-3">d. HQ server controls</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/hq-server-light.png"
+              src={townshiptaleHQLight}
               alt="Screenshot HQ server light theme"
-              loading="lazy"
-              width="1680"
-              height="1050"
             />
             <figcaption class="text-2xl mt-3">
               e. HQ server (light theme)
@@ -141,13 +138,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/townshiptale-launcher.png"
+              src={townshiptaleLauncher}
               alt="Screenshot of ATT Desktop Launcher application"
-              loading="lazy"
-              width="1392"
-              height="679"
             />
             <figcaption class="text-2xl mt-3">
               f. ATT launcher application
@@ -155,34 +149,28 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-sm mx-auto h-auto"
-              src="/images/console-phone.png"
+              src={townshiptaleConsole}
               alt="Screenshot of Server Console on mobile"
-              loading="lazy"
-              width="827"
-              height="1792"
             />
             <figcaption class="text-2xl mt-3">g. Server console</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-sm mx-auto h-auto"
-              src="/images/profile-mobile.png"
+              src={townshiptaleProfile}
               alt="Screenshot of Server Console on mobile"
-              loading="lazy"
-              width="827"
-              height="1792"
             />
-            <figcaption class="text-2xl mt-3">h. Server console</figcaption>
+            <figcaption class="text-2xl mt-3">h. Player profile</figcaption>
           </div>
         </div>
 
         <div class="space-y-6">
           <h3 class="text-3xl">How it works</h3>
 
-          <img
+          <Image
             class="block w-full max-w-full h-auto"
             src="/images/township-architecture.svg"
             alt="Township Tale Architecture"
@@ -250,7 +238,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           },
           {
             url: "/contact",
-            title: "Email",
+            title: "Contact",
             description: "Have a project to discuss? Get in touch.",
           },
         ]}

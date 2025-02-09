@@ -1,6 +1,13 @@
 ---
+import { Picture } from "astro:assets";
+import Image from "astro/components/Image.astro";
 import LinkList from "../../components/LinkList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import csDirectory from "../../assets/cs-directory.png";
+import csBranding from "../../assets/cs-branding.png";
+import csMembers from "../../assets/cs-members.png";
+import csProfile from "../../assets/cs-profile.png";
+import csJob from "../../assets/cs-job.png";
 ---
 
 <BaseLayout
@@ -15,12 +22,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </h1>
 
       <div class="w-full border-white/80 p-6">
-        <img
+        <Picture
           class="block w-full max-w-full h-auto"
-          src="/images/cs-directory.png"
-          height="827"
-          width="1792"
+          src={csDirectory}
           alt="Climate Salad Directory Screenshot"
+          formats={["webp", "avif", "jpeg"]}
         />
         <figcaption class="text-2xl mt-3">
           a. Climate Salad company directory
@@ -74,49 +80,38 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3 class="text-3xl">Project Gallery</h3>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/cs-branding.png"
+              src={csBranding}
               alt="Screenshot of branding guidelines"
               loading="lazy"
-              width="666"
-              height="393"
             />
             <figcaption class="text-2xl mt-3">c. Brand guidelines</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/cs-members.png"
+              src={csMembers}
               alt="Screenshot members directory"
-              loading="lazy"
-              width="1600"
-              height="900"
             />
             <figcaption class="text-2xl mt-3">d. Members directory</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/cs-profile.png"
+              src={csProfile}
               alt="Screenshot member profile"
-              loading="lazy"
-              width="1600"
-              height="900"
             />
             <figcaption class="text-2xl mt-3">e. Member profile</figcaption>
           </div>
 
           <div>
-            <img
+            <Picture
               class="block w-full max-w-full h-auto"
-              src="/images/cs-job.png"
+              src={csJob}
               alt="Screenshot job board"
-              loading="lazy"
-              width="1600"
-              height="900"
             />
             <figcaption class="text-2xl mt-3">e. Job board posting</figcaption>
           </div>
@@ -125,7 +120,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <div class="space-y-6">
           <h3 class="text-3xl">How it works</h3>
 
-          <img
+          <Image
             class="block w-full max-w-full h-auto"
             src="/images/cs-architecture.svg"
             alt="Climate Salad Architecture"
@@ -195,7 +190,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           },
           {
             url: "/contact",
-            title: "Email",
+            title: "Contact",
             description: "Have a project to discuss? Get in touch.",
           },
         ]}

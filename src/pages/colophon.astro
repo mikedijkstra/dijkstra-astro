@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  pageTitle="Colophon by Michael Dijkstra - Product Designer and Software Developer"
+  logo="true"
+  bodyClass="bg-[#12c0cc] text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">Colophon</h1>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">🧑‍💻</span> About this site
+        </h2>
+      </div>
+      <div class="max-w-3xl text-4xl leading-12 mx-auto space-y-6">
+        <p>
+          This website is built with <a href="https://astro.build/" class="link current">Astro</a> and hosted
+          with <a class="link current" href="https://pages.github.com/">GitHub Pages</a>. The source code is
+          available on <a class="link current" href="https://github.com/mikedijkstra/dijkstra-astro">GitHub</a>.
+        </p>
+
+        <p>
+        It was coded with <a class="link current" href="https://neovim.io/">Neovim</a> with a little help from
+        <a class="link current" href="https://copilot.github.com/">GitHub Copilot</a> and local LLM models via
+        <a class="link current" href="https://github.com/yetone/avante.nvim">Avante.nvim</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 18, 192, 204;
+  }
+</style>
