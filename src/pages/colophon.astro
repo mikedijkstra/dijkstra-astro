@@ -20,23 +20,135 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div class="max-w-3xl text-4xl leading-12 mx-auto space-y-6">
         <p>
-          This website is built with <a href="https://astro.build/" class="link current">Astro</a> and hosted
-          with <a class="link current" href="https://pages.github.com/">GitHub Pages</a>. The source code is
-          available on <a class="link current" href="https://github.com/mikedijkstra/dijkstra-astro">GitHub</a>.
+          This version of my website was built in 2025 with
+          <a href="https://astro.build/" class="link current">Astro</a> website hosted
+          with <a class="link current" href="https://pages.github.com/"
+            >GitHub Pages</a
+          >. The source code is available on <a
+            class="link current"
+            href="https://github.com/mikedijkstra/dijkstra-astro">GitHub</a
+          >.
         </p>
 
         <p>
-        It was coded with <a class="link current" href="https://neovim.io/">Neovim</a> with a little help from
-        <a class="link current" href="https://copilot.github.com/">GitHub Copilot</a> and local LLM models via
-        <a class="link current" href="https://github.com/yetone/avante.nvim">Avante.nvim</a>.
+          It was coded with <a class="link current" href="https://neovim.io/"
+            >Neovim</a
+          > with a little help from
+          <a class="link current" href="https://copilot.github.com/"
+            >GitHub Copilot</a
+          > and local LLM models via
+          <a class="link current" href="https://github.com/yetone/avante.nvim"
+            >Avante.nvim</a
+          >.
         </p>
       </div>
     </div>
-  </div>
-</BaseLayout>
 
-<style>
-  :root {
-    --nav-rgb: 18, 192, 204;
-  }
-</style>
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">📜</span> Site history
+        </h2>
+      </div>
+      <div class="max-w-3xl text-4xl leading-12 mx-auto space-y-12">
+        <div class="space-y-4 grid md:grid-cols-8">
+          <div
+            class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block"
+          >
+            <div class="flex-1">2025</div>
+          </div>
+          <div class="md:col-span-5 space-y-1">
+            <h2 class="text-3xl">dijkstra-astro</h2>
+            <p class="text-2xl">
+              <a href="https://astro.build/" class="link current">Astro</a> website
+              hosted with <a
+                class="link current"
+                href="https://pages.github.com/">GitHub Pages</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 grid md:grid-cols-8">
+          <div
+            class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block"
+          >
+            <div class="flex-1">2023</div>
+          </div>
+          <div class="md:col-span-5 space-y-1">
+            <h2 class="text-3xl">dijkstra-enhance</h2>
+            <p class="text-2xl">
+              <a href="https://enhance.dev/" class="link current">Enhance</a> website
+              hosted on <a href="https://aws.amazon.com/" class="link current"
+                >AWS</a
+              > with <a href="https://arc.codes/" class="link current"
+                >Architect</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 grid md:grid-cols-8">
+          <div
+            class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block"
+          >
+            <div class="flex-1">2022</div>
+          </div>
+          <div class="md:col-span-5 space-y-1">
+            <h2 class="text-3xl">dijkstra-remix</h2>
+            <p class="text-2xl">
+              <a href="https://remix.run/" class="link current">Remix</a> website
+              hosted on <a href="https://vercel.com/" class="link current"
+                >Vercel</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 grid md:grid-cols-8">
+          <div
+            class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block"
+          >
+            <div class="flex-1">2018</div>
+          </div>
+          <div class="md:col-span-5 space-y-1">
+            <h2 class="text-3xl">dijkstra-io</h2>
+            <p class="text-2xl">
+              <a href="https://www.gatsbyjs.com/" class="link current">Gatsby</a
+              > website with content sourced from <a
+                href="https://www.contentful.com/"
+                class="link current">Contentful</a
+              > and hosted on
+              <a href="https://www.netlify.com/" class="link current">Netlify</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 grid md:grid-cols-8">
+          <div
+            class="text-2xl leading-9 md:col-span-2 space-y-1 flex gap-6 md:block"
+          >
+            <div class="flex-1">2013</div>
+          </div>
+          <div class="md:col-span-5 space-y-1">
+            <h2 class="text-3xl">mikedijkstra.github.io</h2>
+            <p class="text-2xl">
+              <a href="https://jekyllrb.com/" class="link current">Jekyll</a> website
+              hosted with <a
+                class="link current"
+                href="https://pages.github.com/">GitHub Pages</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    :root {
+      --nav-rgb: 18, 192, 204;
+    }
+  </style>
+</BaseLayout>
