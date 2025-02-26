@@ -1,0 +1,173 @@
+---
+import { Picture } from "astro:assets";
+import Image from "astro/components/Image.astro";
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import omnistra from "../../assets/omnistra-chat.png";
+import chatOne from "../../assets/omnistra-chat-1.png";
+import chatTwo from "../../assets/omnistra-chat-2.png";
+import chatTasks from "../../assets/omnistra-tasks.png";
+---
+
+<BaseLayout
+  pageTitle="Omnistra by Michael Dijkstra - Product Designer and Software Developer"
+  pageDescription="Omnistra by Michael Dijkstra. Product Designer and Software Developer based in Sydney, Australia."
+  logo="true"
+  bodyClass="bg-[#191919] text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">
+        AI Project Manager
+      </h1>
+
+      <div class="w-full border-white/80 p-6">
+        <Picture
+          class="block w-full max-w-full h-auto"
+          src={omnistra}
+          alt="Omnistra Chat page"
+        />
+        <figcaption class="text-2xl mt-3">
+          a. AI powered project management
+        </figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">An AI Project Manager</h2>
+          <p class="text-2xl">
+            With all the rhetoric that AI is going to replace developers, I
+            thought I would get the project managers first and have built an AI
+            powered project management tool.
+          </p>
+
+          <p class="text-2xl">
+            The API and AI Agent is built in Python using FastAPI and is backed
+            by a MongoDB database. It uses the OpenAI API to generate responses
+            to user queries.
+          </p>
+
+          <p class="text-2xl">
+            The front end is built in React with Next.js and uses Tailwind CSS
+            for styling.
+          </p>
+
+          <p class="text-2xl">
+            The API application is on an AWS EC2 instance and the front end is
+            hosted on Vercel.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <h3 class="text-3xl">Project Gallery</h3>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={chatOne}
+              alt="Screenshot of Omnistra chat"
+              loading="lazy"
+            />
+            <figcaption class="text-2xl mt-3">b. New chat example</figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={chatTwo}
+              alt="Screenshot of Omnistra chat"
+              loading="lazy"
+            />
+            <figcaption class="text-2xl mt-3">c. Project check-in</figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={chatTasks}
+              alt="Screenshot of Omnistra tasks"
+              loading="lazy"
+            />
+            <figcaption class="text-2xl mt-3">d. Project tasks</figcaption>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-3xl">How it works</h3>
+
+          <Image
+            class="block w-full max-w-full h-auto"
+            src="/images/omnistra-architecture.svg"
+            alt="Omnistra Architecture"
+            loading="lazy"
+            width="1375"
+            height="730"
+          />
+          <figcaption class="text-2xl mt-3">
+            e. Software Architecture diagram
+          </figcaption>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Software Development</li>
+              <li>Product Management</li>
+            </ul>
+          </dd>
+        </dl>
+
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Tech</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Python</li>
+              <li>Next.JS</li>
+              <li>AWS</li>
+              <li>OpenAI</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/small-victories",
+            title: "Small Victories",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Contact",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 25, 25, 25;
+  }
+</style>

@@ -5,6 +5,16 @@ import LinkList, { type Link } from "../components/LinkList.astro";
 
 const PROJECTS = [
   {
+    title: "AI Project Manager",
+    description:
+    "Developing a project management tool that uses AI.",
+    tags: ["Software Development", "Product Management"],
+    slug: "omnistra",
+  },
+]
+
+const WORK = [
+  {
     title: "Small Victories",
     description:
       "Led Development of application which takes files in a Dropbox folder and turns them into a website.",
@@ -187,7 +197,7 @@ const LINKS: Link[] = [
     <div class="space-y-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl">
-          <span class="-ml-1 pr-4">🚀</span> Things I've built
+          <span class="-ml-1 pr-4">👨‍💻</span> What I'm working on
         </h2>
       </div>
 
@@ -195,6 +205,43 @@ const LINKS: Link[] = [
         <div class="project-items text-2xl space-y-12">
           {
             PROJECTS.map(({ title, description, tags, slug }) => (
+        <a href={`/work/${slug}`} class="group block before:hidden lg:before:block">
+          <div
+            class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out"
+          >
+                <h3 class="text-3xl leading-tight mb-2">{title}</h3>
+                <p class="mb-2 leading-relaxed">
+                {description}
+                </p>
+                {tags ? <div class="flex flex-wrap gap-2 mt-4">
+                  {tags.map((tag) => {
+                  return (<span class="text-xl whitespace-nowrap">{tag}</span> <span class="text-xl last-of-type:hidden">&bull;</span>)
+                  })}
+                </div> : null}
+            <div
+              class="absolute right-6 group-hover:right-4 w-6 top-8 sm:-translate-y-1/2 duration-300 ease-out"
+            >
+              <ArrowRight />
+            </div>
+            </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">🚀</span> Things I've built
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto relative">
+        <div class="project-items text-2xl space-y-12">
+          {
+            WORK.map(({ title, description, tags, slug }) => (
         <a href={`/work/${slug}`} class="group block before:hidden lg:before:block">
           <div
             class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out"
