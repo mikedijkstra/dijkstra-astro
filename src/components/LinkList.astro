@@ -48,6 +48,7 @@ const { links, className } = Astro.props;
 
   .ordered > *::before {
     content: counter(count);
+    display: none;
     font-size: var(--text-3xl);
     line-height: var(--leading-tight);
     text-align: right;
@@ -58,5 +59,11 @@ const { links, className } = Astro.props;
 
   .ordered > *:nth-child(-n + 9)::before {
     content: "0" counter(count);
+  }
+
+  @media screen and (min-width: 1000px) {
+    .ordered > *::before {
+      display: block;
+    }
   }
 </style>

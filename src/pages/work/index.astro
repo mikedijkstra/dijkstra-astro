@@ -285,7 +285,7 @@ const WORK = [
     </div>
 
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           WORK.map(({ title, description, tags, caseStudy, link, type }) => {
             const Wrapper = caseStudy || link ? "a" : "div";

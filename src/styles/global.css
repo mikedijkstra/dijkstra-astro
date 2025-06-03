@@ -16,15 +16,9 @@
   --font-serif: serif;
   --font-mono: monospace;
 
-  --site-width: 90vw;
-  --site-max-width: 1560px;
-  --site-content-width: max(320px - var(--space-0), 74rem);
-  --editorial-width: max(320px - var(--space-0), 60rem);
   --nav-height: 60px;
   --nav-rgb: 3, 17, 91;
   --body-rgb: 3, 17, 91;
-
-  --text-
 }
 
 @font-face {
