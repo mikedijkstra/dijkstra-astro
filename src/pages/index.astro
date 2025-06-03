@@ -1,85 +1,106 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArrowRight from "../components/ArrowRight.astro";
 import LinkList, { type Link } from "../components/LinkList.astro";
 
-const PROJECTS = [
+const SERVICES = [
   {
-    title: "AI Project Manager",
+    title: "Product Strategy",
     description:
-    "Developing a project management tool that uses AI.",
-    tags: ["Software Development", "Product Management"],
-    slug: "omnistra",
+      "Planning and prioritisation, product vision, MVP definition and user metrics and analytics.",
+    url: "/services/product",
   },
-]
+  {
+    title: "UX & Design",
+    description:
+      "Wireframing, prototyping, design systems, UX writing and user journey mapping.",
+    url: "/services/ux-design",
+  },
+  {
+    title: "Full Stack Development",
+    description:
+      "Frontend and backend development, mobile and desktop development, REST and GraphQL APIs and performance optimisation.",
+    url: "/services/full-stack-development",
+  },
+  {
+    title: "Infrastructure & DevOps",
+    description:
+      "Deployments, CI/CD pipelines, Infrastructure as code, logging, monitoring and observability.",
+    url: "/services/infrastructure",
+  },
+  {
+    title: "Integrations",
+    description:
+      "Connect to other services and platforms, including payment gateways, email providers, CRM systems, analytics and authentication.",
+    url: "/services/integrations",
+  },
+];
 
 const WORK = [
   {
     title: "Small Victories",
     description:
-      "Led Development of application which takes files in a Dropbox folder and turns them into a website.",
-    tags: ["Software Development", "Product Management"],
-    slug: "small-victories",
+      "Software Development of application which takes files in a Dropbox folder and turns them into a website.",
+    url: "/work/small-victories",
   },
   {
-    title: 'Climate Salad',
-    description: 'Led Design and Development of a new member and data platform.',
-    tags: ['Product Design', 'Software Development', 'Product Management'],
-    slug: 'climate-salad',
+    title: "Climate Salad",
+    description:
+      "Design and Software Development of a new member and data platform.",
+    url: "/work/climate-salad",
   },
   {
-    title: 'A Township Tale',
-    description: 'Product Design and Development for for all web and desktop front-ends that support the A Township Tale VR game.',
-    tags: ['Product Design', 'Software Development', 'Product Management'],
-    slug: 'a-township-tale',
+    title: "A Township Tale",
+    description:
+      "Product Design and Software Development for for all web and desktop front-ends that support the A Township Tale VR game.",
+    url: "/work/a-township-tale",
   },
   {
-    title: 'Wise',
-    description: 'Led Development of applications to create shared reading lists within teams.',
-    tags: ['Software Development', 'Product Management'],
-    slug: 'wise',
+    title: "Wise",
+    description:
+      "Software Development of applications to create shared reading lists within teams.",
+    url: "/work/wise",
   },
   {
-    title: 'Franke',
-    description: 'Led Development of application to send emails directly into Slack channels.',
-    tags: ['Software Development', 'Product Management'],
-    slug: 'franke',
+    title: "Franke",
+    description:
+      "Software Development of application to send emails directly into Slack channels.",
+    url: "/work/franke",
   },
 ];
 
 const LINKS: Link[] = [
-{
-  title: "Work",
-  url: "/work",
-  description: "View a list of my projects and work history.",
-},
-{
-  title: "@mikedijkstra",
-  url: "https://github.com/mikedijkstra",
-  description: "Check out my code and open source contributions on GitHub."
+  {
+    title: "Work",
+    url: "/work",
+    description: "View a list of my projects and work history.",
+  },
+  {
+    title: "@mikedijkstra",
+    url: "https://github.com/mikedijkstra",
+    description: "Check out my code and open source contributions on GitHub.",
   },
   {
     title: "mikedijkstra",
     url: "https://linkedin.com/in/mikedijkstra",
-    description: "Connect with me on LinkedIn."
+    description: "Connect with me on LinkedIn.",
   },
   {
     title: "Contact",
     url: "/contact",
-    description: "Get in touch with me directly."
+    description: "Get in touch with me directly.",
   },
   {
     title: "👀",
     url: "/archive",
     description: "Have a look at my secret archive.",
-    hidden: true
-  }
-]
+    hidden: true,
+  },
+];
 ---
 
 <BaseLayout
-  pageTitle="Michael Dijkstra - Product Designer and Full Stack Developer"
-  pageDescription="Michael Dijkstra is a product designer and Full Stack Developer with 15 years of experience building digital products."
+  pageTitle="Mike Dijkstra - Helping companies turn ideas into working software."
+  pageDescription="Mike Dijkstra connects the dots between business goals, user needs and engineering realities."
   bodyClass="bg-gulf text-white font-sans"
 >
   <div class="space-y-24 py-24 px-6">
@@ -165,8 +186,8 @@ const LINKS: Link[] = [
             fill-rule="nonzero"></path>
         </g>
       </svg>
-      <p class="text-4xl leading-12 max-w-3xl">
-        Product Designer and Full Stack Developer
+      <p class="text-4xl leading-12 max-w-4xl">
+        Helping companies turn ideas into working software.
       </p>
     </div>
 
@@ -176,20 +197,21 @@ const LINKS: Link[] = [
           <span class="-ml-1 pr-4">👋</span> Hello
         </h2>
       </div>
-      <div class="max-w-3xl text-4xl leading-12 mx-auto space-y-6">
+      <div class="max-w-3xl text-2xl sm:text-3xl mx-auto space-y-6">
         <p>
-          My name is Michael Dijkstra and I create digital products that are
-          fast, reliable and easy to use.
+          I can help you move from idea to execution by shaping products,
+          designing experiences and building the software behind them.
         </p>
 
         <p>
-          Over the past 15 years, I've worked across the entire product
-          lifecycle as a product manager, product designer, and full stack developer with companies
-          of all sizes&mdash;from startups to enterprises.
+          I've worked across the entire product lifecycle from product
+          management to full stack development. My strength is in connecting the
+          dots between business goals, user needs and engineering realities.
         </p>
 
         <p>
-          Please browse my work and get in touch if you&rsquo;d like to chat. ✌️
+          Please browse my work, find out more about me and get in touch if
+          you&rsquo;d like to chat. ✌️
         </p>
       </div>
     </div>
@@ -197,36 +219,47 @@ const LINKS: Link[] = [
     <div class="space-y-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl">
-          <span class="-ml-1 pr-4">👨‍💻</span> What I'm working on
+          <span class="-ml-1 pr-4">💁‍</span> What I can help with
         </h2>
       </div>
 
       <div class="max-w-3xl mx-auto relative">
-        <div class="project-items text-2xl space-y-12">
-          {
-            PROJECTS.map(({ title, description, tags, slug }) => (
-        <a href={`/work/${slug}`} class="group block before:hidden lg:before:block">
-          <div
-            class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out"
-          >
-                <h3 class="text-3xl leading-tight mb-2">{title}</h3>
-                <p class="mb-2 leading-relaxed">
-                {description}
-                </p>
-                {tags ? <div class="flex flex-wrap gap-2 mt-4">
-                  {tags.map((tag) => {
-                  return (<span class="text-xl whitespace-nowrap">{tag}</span> <span class="text-xl last-of-type:hidden">&bull;</span>)
-                  })}
-                </div> : null}
-            <div
-              class="absolute right-6 group-hover:right-4 w-6 top-8 sm:-translate-y-1/2 duration-300 ease-out"
-            >
-              <ArrowRight />
-            </div>
-            </div>
-              </a>
-            ))
-          }
+        <LinkList links={SERVICES} />
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">🧑‍💻️</span> How I work
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto relative">
+        <div class="text-2xl sm:text-3xl space-y-12">
+          <p>
+            I believe in shipping “good enough” early and then iterating toward
+            great. That means working in small, clear steps, validating ideas
+            quickly, and staying open to change.
+          </p>
+
+          <p>
+            I often start with pen and paper to sketch out ideas, then move into
+            Figma for wireframes, flows and design.
+          </p>
+
+          <p>
+            I use pull requests to keep code collaborative and reviewable, write
+            tests to build confidence in what&rsquo;s shipped, and rely on
+            continuous deployment to move fast without breaking things.
+          </p>
+
+          <p>
+            AI tools help me move faster and work with a broader range of
+            technologies. Applying solid software development principles on top
+            of AI generated code allows me to build with new stacks, catch bugs
+            early, and stay focused on what matters.
+          </p>
         </div>
       </div>
     </div>
@@ -239,32 +272,7 @@ const LINKS: Link[] = [
       </div>
 
       <div class="max-w-3xl mx-auto relative">
-        <div class="project-items text-2xl space-y-12">
-          {
-            WORK.map(({ title, description, tags, slug }) => (
-        <a href={`/work/${slug}`} class="group block before:hidden lg:before:block">
-          <div
-            class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out"
-          >
-                <h3 class="text-3xl leading-tight mb-2">{title}</h3>
-                <p class="mb-2 leading-relaxed">
-                {description}
-                </p>
-                {tags ? <div class="flex flex-wrap gap-2 mt-4">
-                  {tags.map((tag) => {
-                  return (<span class="text-xl whitespace-nowrap">{tag}</span> <span class="text-xl last-of-type:hidden">&bull;</span>)
-                  })}
-                </div> : null}
-            <div
-              class="absolute right-6 group-hover:right-4 w-6 top-8 sm:-translate-y-1/2 duration-300 ease-out"
-            >
-              <ArrowRight />
-            </div>
-            </div>
-              </a>
-            ))
-          }
-        </div>
+        <LinkList links={WORK} className="ordered" />
       </div>
     </div>
 
@@ -281,29 +289,7 @@ const LINKS: Link[] = [
 
   <div class="text-center p-12">
     <p class="text-xl">
-      <a href="/colophon" class="link current">
-        Colophon
-      </a>
+      <a href="/colophon" class="link current"> Colophon </a>
     </p>
+  </div>
 </BaseLayout>
-
-<style>
-  .project-items > * {
-    counter-increment: count;
-    display: block;
-  }
-
-  .project-items > *::before {
-    content: counter(count);
-    font-size: var(--text-3xl);
-    line-height: var(--leading-tight);
-    text-align: right;
-    position: absolute;
-    left: -60px;
-    margin-top: 0.8em;
-  }
-
-  .project-items > *:nth-child(-n + 9)::before {
-    content: "0" counter(count);
-  }
-</style>

@@ -10,12 +10,13 @@ export interface Link {
 
 interface Props {
   links: Link[];
+  className?: string;
 }
 
-const { links } = Astro.props;
+const { links, className } = Astro.props;
 ---
 
-<div class="max-w-4xl mx-auto relative text-2xl space-y-6 lg:pl-14">
+<div class={`max-w-3xl mx-auto relative space-y-6 ${className}`}>
   {
     links.map((link) => (
       <a
@@ -26,8 +27,10 @@ const { links } = Astro.props;
         href={link.url}
       >
         <div class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out pr-12">
-          <p class="mb-2 leading-relaxed">{link.title}</p>
-          <p class="leading-relaxed">{link.description}</p>
+          <p class="mb-2 leading-relaxed text-2xl sm:text-3xl">{link.title}</p>
+          <p class="sm:leading-relaxed text-md sm:text-xl">
+            {link.description}
+          </p>
           <div class="absolute right-6 group-hover:right-4 w-6 top-8 sm:top-1/2 sm:-translate-y-1/2 duration-300 ease-out">
             <ArrowRight />
           </div>
@@ -36,3 +39,24 @@ const { links } = Astro.props;
     ))
   }
 </div>
+
+<style>
+  .ordered > * {
+    counter-increment: count;
+    display: block;
+  }
+
+  .ordered > *::before {
+    content: counter(count);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+    text-align: right;
+    position: absolute;
+    left: -60px;
+    margin-top: 0.8em;
+  }
+
+  .ordered > *:nth-child(-n + 9)::before {
+    content: "0" counter(count);
+  }
+</style>

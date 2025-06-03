@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "Full Stack Development",
+  subtitle:
+    "From idea to working product — frontend, backend, and everything in between.",
+  intro:
+    "I build modern web apps from the ground up, or join existing teams to help move things forward. I'm comfortable across the stack and focus on writing clean, maintainable code that's easy for others to build on.",
+  cards: [
+    {
+      title: "Frontend Development",
+      description:
+        "Building fast, responsive, accessible interfaces following best practices and using modern frameworks such as React and Vue.",
+    },
+    {
+      title: "Backend Development",
+      description:
+        "Creating APIs, handling business logic and managing data using Node.js, Ruby, Python and other technologies.",
+    },
+    {
+      title: "Mobile Development",
+      description:
+        "Developing cross-platform mobile apps using React Native, so you can reach users on both iOS and Android.",
+    },
+    {
+      title: "Desktop Development",
+      description:
+        "Building desktop applications with Electron, allowing you to create cross-platform apps that run on Windows, macOS, and Linux.",
+    },
+    {
+      title: "API Development",
+      description:
+        "Designing and implementing RESTful and GraphQL APIs to connect frontend and backend systems, ensuring smooth data flow.",
+    },
+    {
+      title: "Performance Optimisation",
+      description:
+        "Improving app speed and responsiveness by optimising code, assets, and server interactions.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/services/infrastructure",
+      title: "Infrastructure & DevOps",
+      description:
+        "See how I can help set up and manage the systems that keep your product running smoothly.",
+    },
+    {
+      url: "/work/a-township-tale",
+      title: "A Township Tale",
+      description:
+        "View a case study where I built a new web app and managed an existing desktop app for a VR game studio.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="Full Stack Development by Mike Dijkstra - From idea to working product."
+  pageDescription="Mike helps build modern web apps from the ground up, or join existing teams to help move things forward. Comfortable across the stack and focused on writing clean, maintainable code."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>

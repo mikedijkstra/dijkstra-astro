@@ -1,0 +1,29 @@
+---
+import Lockup from "./Lockup.astro";
+type Card = {
+  title: string;
+  description: string;
+};
+
+interface Props {
+  title: string;
+  subtitle: string;
+  intro: string;
+  cards: Card[];
+}
+
+const { title, subtitle, intro, cards } = Astro.props;
+---
+
+<Lockup title={title} subtitle={subtitle} intro={intro} />
+
+<div class="max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+  {
+    cards.map(({ title, description }) => (
+      <div class="relative bg-body-highlight group-hover:bg-body-highlight-focus bg-blur-10 rounded-xl flex-1 p-6 transition-colors duration-300 ease-out">
+        <h3 class="text-2xl sm:text-3xl leading-tight mb-2">{title}</h3>
+        <p class="text-md sm:text-xl mb-2 leading-relaxed">{description}</p>
+      </div>
+    ))
+  }
+</div>

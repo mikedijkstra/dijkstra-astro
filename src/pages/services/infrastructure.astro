@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "Infrastructre & DevOps",
+  subtitle: "Reliable systems to support your product.",
+  intro:
+    " I help teams set up and manage infrastructure that's stable, scalable, and easy to work with. Whether you're starting from scratch or improving an existing setup, I will keep things running smoothly.",
+  cards: [
+    {
+      title: "Deployments",
+      description:
+        "Setting up hosting deployment using platforms like Vercel, AWS, Amplify, Heroku, Firebase and Google Cloud Platform.",
+    },
+    {
+      title: "CI/CD Pipelines",
+      description:
+        "Automating testing, building and releasing code to speed up development and reduce manual errors with platforms like GitHub Actions and Circle CI.",
+    },
+    {
+      title: "Monitoring & Logging",
+      description:
+        "Integrations tools like Sentry, CloudWatch and New Relic to track performance and catch issues.",
+    },
+    {
+      title: "Infrastructure as Code",
+      description:
+        "Using tools like Terraform, CloudFormation and Architect to define infrastructure in a consistent, version-controlled way.",
+    },
+    {
+      title: "Environment Setup",
+      description:
+        "Creating clear and maintainable staging and production environments to support smooth development and releases.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/services/integrations",
+      title: "Integrations",
+      description:
+        "See how I can help connect your product to other services and platforms.",
+    },
+    {
+      url: "/work/climate-salad",
+      title: "Climate Salad",
+      description:
+        "View a case study where I managed Infrastructure & DevOps for a new members platform.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="Infrastructure & DevOps by Mike Dijkstra - Reliable systems to support your product."
+  pageDescription="Mike helps teams set up and manage infrastructure that's stable, scalable and easy to work with."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>

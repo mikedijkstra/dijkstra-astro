@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "Integrations",
+  subtitle: "Connecting third-party services and platforms.",
+  intro:
+    "I help integrate products with the services they rely on. From payments and email to analytics, CRMs and authentication. The goal is to make everything work together smoothly, so your product feels cohesive and your data stays in sync.",
+  cards: [
+    {
+      title: "Payment Providers",
+      description:
+        "Connecting payment services to support subscriptions or one-off payments with providers such as Stripe and Xsolla.",
+    },
+    {
+      title: "Email",
+      description:
+        "Integrating tools like MailChimp for automated journey messaging and newsletter subscriptions, and Postmark, Mandrill or SES for transactional emails.",
+    },
+    {
+      title: "Messaging",
+      description:
+        "Integrations tools like Intercom and Customer.io for behavioural messaging and customer support.",
+    },
+    {
+      title: "CRM & Customer Data",
+      description:
+        "Linking products to systems like HubSpot and Airtable to keep customer data aligned and manageable.",
+    },
+    {
+      title: "Analytics",
+      description:
+        "Setting up tracking with Google Analytics, Mixpanel, Segment or home built solutions to monitor important metrics and product performance.",
+    },
+    {
+      title: "Authentication",
+      description:
+        "Implementing secure login systems using OAuth, SSO, or custom solutions to protect user accounts and data.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/services/product",
+      title: "Product Strategy",
+      description:
+        "See how I can help your planning and prioritisation to build the right product.",
+    },
+    {
+      url: "/work/climate-salad",
+      title: "Climate Salad",
+      description:
+        "View a case study where I integrated with multiple third-party services for a new members platform.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="Integrations by Mike Dijkstra - Connecting third-party services and platforms."
+  pageDescription="Mike helps integrate products with the services they rely on. From payments and email to analytics, CRMs and authentication."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "UX & Design",
+  subtitle:
+    "Design that's practical, simple, and easy to use and easy to build.",
+  intro:
+    "I help shape user experiences that feel intuitive and straightforward. Working from early ideas through to final designs, my approach is to keep things practical and focused on what users really need.",
+  cards: [
+    {
+      title: "Wireframing",
+      description:
+        "Sketching fast, low-fidelity ideas to explore layout, structure, and flow before getting into the details.",
+    },
+    {
+      title: "Visual Design",
+      description:
+        "Creating clean, modern interfaces that are visually appealing and easy to navigate.",
+    },
+    {
+      title: "Prototyping",
+      description:
+        "Building interactive prototypes to test concepts and gather feedback early in the design process.",
+    },
+    {
+      title: "Design Systems",
+      description:
+        "Establishing consistent design patterns and components to ensure a cohesive look and feel across the product.",
+    },
+    {
+      title: "UX Writing",
+      description:
+        "Making sure interface copy is clear, helpful, and matches the product's tone of voice.",
+    },
+    {
+      title: "User Journeys",
+      description:
+        "Mapping out the key steps users take to achieve their goals, helping to identify pain points and opportunities for improvement.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/services/full-stack-development",
+      title: "Full Stack Development",
+      description:
+        "See how I can take the designs and turn them into a working product.",
+    },
+    {
+      url: "/work/q-ctrl",
+      title: "Q-CTRL",
+      description:
+        "View a case study where I defined the User Experience for a new product to help scientists and engineers control quantum systems.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="UX & Design by Mike Dijkstra - Design that's practical, simple, and easy to use."
+  pageDescription="Mike helps shape user experiences that feel intuitive and straightforward. Working from early ideas through to final designs, the approach is to keep things practical and focused on what users really need."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>
