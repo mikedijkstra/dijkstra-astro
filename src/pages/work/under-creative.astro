@@ -1,0 +1,109 @@
+---
+import { Picture } from "astro:assets";
+import Image from "astro/components/Image.astro";
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import hero from "../../assets/under-creative-logo.png";
+---
+
+<BaseLayout
+  pageTitle="Under Creative by Michael Dijkstra"
+  pageDescription="Under Creative by Michael Dijkstra"
+  logo="true"
+  bodyClass="bg-black text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">
+        Under Creative
+      </h1>
+
+      <div class="w-full border-white/80 p-6">
+        <Picture
+          class="block w-full max-w-full h-auto"
+          src={hero}
+          alt="Under Creative logo"
+        />
+        <figcaption class="text-2xl mt-3">a. Under Creative logo</figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">A new digital creative agency</h2>
+          <p class="text-2xl">
+            Under Creative is a new mobile app design and development agency
+            which was founded in 2025.
+          </p>
+
+          <p class="text-2xl">
+            I crafted a new visual identity for the brand, including a modern
+            logo that balances playfulness with professionalism, to capture the
+            essence of their mission to champion the underdog.
+          </p>
+
+          <p class="text-2xl">
+            Alongside the logo, I developed branding guidelines covering color,
+            typography, and layout, ensuring consistency across all touchpoints.
+          </p>
+
+          <p class="text-2xl">
+            The website was designed to be clean and modern, with a focus on
+            showcasing the agency's expertise in mobile app design and
+            development.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Logo Design</li>
+              <li>Visual Identity</li>
+              <li>Brand Guidelines</li>
+              <li>Typography</li>
+              <li>Website Design</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/climate-salad",
+            title: "Climate Salad",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Contact",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 0, 0, 0;
+  }
+</style>

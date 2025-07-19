@@ -10,12 +10,23 @@ interface Props {
   subtitle: string;
   intro: string;
   cards: Card[];
+  images?: string[];
 }
 
-const { title, subtitle, intro, cards } = Astro.props;
+const { title, subtitle, intro, cards, images } = Astro.props;
 ---
 
 <Lockup title={title} subtitle={subtitle} intro={intro} />
+
+{
+  images && images.length > 0 && (
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {images.map((image) => (
+        <img src={image} alt={title} class="w-full h-auto rounded-lg" />
+      ))}
+    </div>
+  )
+}
 
 <div class="max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
   {

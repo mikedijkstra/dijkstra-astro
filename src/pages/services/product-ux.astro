@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "Product & UX",
+  subtitle: "Turn ideas into clear plans ready to build.",
+  intro:
+    "I help teams shape product ideas by defining the vision, prioritising features, and creating a roadmap that guides development. The goal is to ensure everyone is aligned on what to build next and why it matters.",
+  cards: [
+    {
+      title: "Product vision",
+      description:
+        "Clarifying the long-term goals and purpose of the product to guide decision-making.",
+    },
+    {
+      title: "MVP Definition",
+      description:
+        "Identifying the core features needed to validate the product idea, deliver value and learn from customers.",
+    },
+    {
+      title: "Prioritisation",
+      description:
+        "Helping you decide what to build next by balancing customer needs, business goals, and technical feasibility.",
+    },
+    {
+      title: "Analytics & metrics",
+      description:
+        "Defining what success looks like and making sure you're set up to measure and learn from how real users interact with your product.",
+    },
+    {
+      title: "Prototyping",
+      description:
+        "Building interactive prototypes to test concepts and gather feedback early in the design process.",
+    },
+    {
+      title: "User Journeys",
+      description:
+        "Mapping out the key steps users take to achieve their goals, helping to identify pain points and opportunities for improvement.",
+    },
+    {
+      title: "UX Writing",
+      description:
+        "Making sure interface copy is clear, helpful, and matches the product's tone of voice.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/services/full-stack-development",
+      title: "Full Stack Development",
+      description:
+        "See how I can take the designs and turn them into a working product.",
+    },
+    {
+      url: "/work/wise",
+      title: "Wise",
+      description:
+        "View a case study where I helped shape the product strategy for shared reading lists for teams through multiple iterations.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="Product Strategy by Mike Dijkstra - Turn ideas into clear plans ready to build."
+  pageDescription="Mike helps teams shape product ideas by defining the vision, prioritising features, and creating a roadmap that guides development."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>

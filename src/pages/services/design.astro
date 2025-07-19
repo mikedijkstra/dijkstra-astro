@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import UpNext from "../../components/UpNext.astro";
+
+const workProps = {
+  title: "Branding & Design",
+  subtitle: "Visual clarity, simple UX, and a strong first impression.",
+  intro:
+    "I help shape how your product looks and feels — from early sketches to final UI. That includes brand identity, design systems, and clean, usable interfaces.",
+  cards: [
+    {
+      title: "Visual Identity",
+      description:
+        "Creating a strong, memorable brand identity that reflects your values and resonates with your audience.",
+    },
+    {
+      title: "Brand Guidelines",
+      description:
+        "Defining how your brand should look and feel across different platforms, ensuring consistency in design and messaging.",
+    },
+    {
+      title: "Wireframing",
+      description:
+        "Sketching fast, low-fidelity ideas to explore layout, structure, and flow before getting into the details.",
+    },
+    {
+      title: "UI Design",
+      description:
+        "Creating clean, modern interfaces that are visually appealing and easy to navigate.",
+    },
+    {
+      title: "Design Systems",
+      description:
+        "Establishing consistent design patterns and components to ensure a cohesive look and feel across the product.",
+    },
+    {
+      title: "Copy Writing",
+      description:
+        "Making sure interface copy is clear, helpful, and matches the product's tone of voice.",
+    },
+  ],
+};
+
+const upNextProps = {
+  links: [
+    {
+      url: "/work/under-creative",
+      title: "Under Creative",
+      description:
+        "View a case study where I created the branding and design of a new creative agency.",
+    },
+    {
+      url: "/services/product-ux",
+      title: "Product & UX",
+      description:
+        "See how I can help your planning and prioritisation to build the right product.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  pageTitle="Branding & Design by Mike Dijkstra"
+  pageDescription="Mike helps shape how your product looks and feels — from early sketches to final UI. That includes brand identity, design systems, and clean, usable interfaces."
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <div class="space-y-12 md:space-y-24 py-24 px-6">
+    <Work {...workProps} />
+
+    <UpNext {...upNextProps} />
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+</style>

@@ -4,48 +4,36 @@ import LinkList, { type Link } from "../components/LinkList.astro";
 
 const SERVICES = [
   {
-    title: "Product Strategy",
+    title: "Branding and Design",
     description:
-      "Planning and prioritisation, product vision, MVP definition and user metrics and analytics.",
-    url: "/services/product",
+      "Visual identity, logo design, brand guidelines, typography, UI design and design systems.",
+    url: "/services/design",
   },
   {
-    title: "UX & Design",
+    title: "Product & UX",
     description:
-      "Wireframing, prototyping, design systems, UX writing and user journey mapping.",
-    url: "/services/ux-design",
+      "Planning and prioritisation, wireframing, user journey mapping, metrics and analytics.",
+    url: "/services/product-ux",
   },
   {
     title: "Full Stack Development",
     description:
-      "Frontend and backend development, mobile and desktop development, REST and GraphQL APIs and performance optimisation.",
+      "Frontend, backend, mobile and desktop applications, APIs, third party integrations, monitoring and performance optimisation.",
     url: "/services/full-stack-development",
-  },
-  {
-    title: "Infrastructure & DevOps",
-    description:
-      "Deployments, CI/CD pipelines, Infrastructure as code, logging, monitoring and observability.",
-    url: "/services/infrastructure",
-  },
-  {
-    title: "Integrations",
-    description:
-      "Connect to other services and platforms, including payment gateways, email providers, CRM systems, analytics and authentication.",
-    url: "/services/integrations",
   },
 ];
 
 const WORK = [
   {
-    title: "Small Victories",
+    title: "Under Creative",
     description:
-      "Software Development of application which takes files in a Dropbox folder and turns them into a website.",
-    url: "/work/small-victories",
+      "Branding and design of a new creative agency, including logo design, brand guidelines and website design.",
+    url: "/work/under-creative",
   },
   {
     title: "Climate Salad",
     description:
-      "Design and Software Development of a new member and data platform.",
+      "Product design and software development of a new member and data platform integrating with multiple third party services.",
     url: "/work/climate-salad",
   },
   {
@@ -54,26 +42,9 @@ const WORK = [
       "Product Design and Software Development for for all web and desktop front-ends that support the A Township Tale VR game.",
     url: "/work/a-township-tale",
   },
-  {
-    title: "Wise",
-    description:
-      "Software Development of applications to create shared reading lists within teams.",
-    url: "/work/wise",
-  },
-  {
-    title: "Franke",
-    description:
-      "Software Development of application to send emails directly into Slack channels.",
-    url: "/work/franke",
-  },
 ];
 
 const LINKS: Link[] = [
-  {
-    title: "Work",
-    url: "/work",
-    description: "View a list of my projects and work history.",
-  },
   {
     title: "@mikedijkstra",
     url: "https://github.com/mikedijkstra",
@@ -89,22 +60,16 @@ const LINKS: Link[] = [
     url: "/contact",
     description: "Get in touch with me directly.",
   },
-  {
-    title: "👀",
-    url: "/archive",
-    description: "Have a look at my secret archive.",
-    hidden: true,
-  },
 ];
 ---
 
 <BaseLayout
-  pageTitle="Mike Dijkstra - Helping companies turn ideas into working software."
+  pageTitle="Mike Dijkstra - Digital Creative"
   pageDescription="Mike Dijkstra connects the dots between business goals, user needs and engineering realities."
   bodyClass="bg-gulf text-white font-sans"
 >
   <div class="space-y-24 py-24 px-6">
-    <div class="flex gap-3 flex-col text-center items-center max-w-4xl mx-auto">
+    <div class="flex gap-3 flex-col text-center items-center max-w-3xl mx-auto">
       <svg
         id="splash"
         width="360px"
@@ -187,7 +152,7 @@ const LINKS: Link[] = [
         </g>
       </svg>
       <p class="text-4xl leading-12 max-w-4xl">
-        Helping companies turn ideas into working software.
+        a digital creative from Sydney, Australia
       </p>
     </div>
 
@@ -200,14 +165,14 @@ const LINKS: Link[] = [
       <div class="max-w-3xl text-2xl sm:text-3xl mx-auto space-y-6">
         <p>
           I'm Mike Dijkstra and I can help you move from idea to execution by
-          shaping products, designing experiences and building the software
-          behind them.
+          helping with branding, shaping products, designing experiences and
+          building software.
         </p>
 
         <p>
-          I've worked across the entire product lifecycle from product
-          management to full stack development. My strength is in connecting the
-          dots between business goals, user needs and engineering realities.
+          I've worked across the entire product lifecycle from ideation to full
+          stack development. My strength is in connecting the dots between
+          business goals, user needs and engineering realities.
         </p>
 
         <p>
@@ -220,60 +185,24 @@ const LINKS: Link[] = [
     <div class="space-y-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl">
+          <span class="-ml-1 pr-1 md:pr-4">🚀</span> Recent work
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto relative">
+        <LinkList links={WORK} className="ordered" />
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl">
           <span class="-ml-1 pr-1 md:pr-4">💁‍</span> Where I help
         </h2>
       </div>
 
       <div class="max-w-3xl mx-auto relative">
         <LinkList links={SERVICES} />
-      </div>
-    </div>
-
-    <div class="space-y-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl">
-          <span class="-ml-1 pr-1 md:pr-4">🧑‍💻️</span> How I work
-        </h2>
-      </div>
-
-      <div class="max-w-3xl mx-auto relative">
-        <div class="text-2xl sm:text-3xl space-y-12">
-          <p>
-            I believe in shipping “good enough” early and then iterating toward
-            great. That means working in small, clear steps, validating ideas
-            quickly, and staying open to change.
-          </p>
-
-          <p>
-            I often start with pen and paper to sketch out ideas, then move into
-            Figma for wireframes, flows and design.
-          </p>
-
-          <p>
-            I use pull requests to keep code collaborative and reviewable, write
-            tests to build confidence in what&rsquo;s shipped, and rely on
-            continuous deployment to move fast without breaking things.
-          </p>
-
-          <p>
-            AI tools help me move faster and work with a broader range of
-            technologies. Applying solid software development principles on top
-            of AI generated code allows me to build with new stacks, catch bugs
-            early, and stay focused on what matters.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="space-y-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl">
-          <span class="-ml-1 pr-1 md:pr-4">🚀</span> What I've built
-        </h2>
-      </div>
-
-      <div class="max-w-3xl mx-auto relative">
-        <LinkList links={WORK} className="ordered" />
       </div>
     </div>
 
