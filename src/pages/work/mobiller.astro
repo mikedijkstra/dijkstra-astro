@@ -1,0 +1,162 @@
+---
+import { Picture } from "astro:assets";
+import LinkList from "../../components/LinkList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import hero from "../../assets/mobiller-shots.png";
+import styleguide from "../../assets/mobiller-styleguide.png";
+import mobillerOne from "../../assets/mobiller-1.png";
+import mobillerTwo from "../../assets/mobiller-2.png";
+import mobillerThree from "../../assets/mobiller-3.png";
+import icon from "../../assets/mobiller-icon.png";
+---
+
+<BaseLayout
+  pageTitle="MoBiller by Michael Dijkstra"
+  pageDescription="MoBiller by Michael Dijkstra"
+  logo="true"
+  bodyClass="bg-[#252525] text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div class="max-w-6xl text-9xl leading-24 mx-auto space-y-12 text-center">
+      <h1 class="text-6xl lg:text-8xl leading-16 lg:leading-24">MoBiller</h1>
+
+      <div class="w-full border-white/80 p-6 max-w-4xl mx-auto">
+        <Picture
+          class="block w-full max-w-full h-auto"
+          src={hero}
+          alt="MoBiller app screenshots"
+        />
+        <figcaption class="text-2xl mt-3">a. MoBiller screens</figcaption>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="md:col-span-8 space-y-24">
+        <div class="space-y-6">
+          <h2 class="text-3xl">VMO Medical billing, made easy.</h2>
+          <p class="text-2xl">
+            MoBiller is an iOS app that simplifies capturing patient details,
+            recording billing codes, and generating billing reports.
+          </p>
+
+          <p class="text-2xl">
+            I began by prototyping the core features with React Native and Expo,
+            enabling rapid iteration and early user testing. This let me
+            validate the user experience before moving into detailed design.
+          </p>
+
+          <p class="text-2xl">
+            The interface was then designed in Figma, focusing on simplicity and
+            ease of use. Once the design was finalised, I returned to
+            development with React Native and Expo, using Unistyles to implement
+            a consistent design system across the app.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <h3 class="text-3xl">Project Gallery</h3>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={mobillerOne}
+              alt="MoBiller app screenshots"
+            />
+            <figcaption class="text-2xl mt-3">
+              b. Primary screens design
+            </figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={mobillerTwo}
+              alt="MoBiller app screenshots"
+            />
+            <figcaption class="text-2xl mt-3">c. Interaction design</figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={mobillerThree}
+              alt="MoBiller app screenshots"
+            />
+            <figcaption class="text-2xl mt-3">
+              d. Secodnary screens design
+            </figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={icon}
+              alt="MoBiller icon design"
+              loading="lazy"
+            />
+            <figcaption class="text-2xl mt-3">e. App icon</figcaption>
+          </div>
+
+          <div>
+            <Picture
+              class="block w-full max-w-full h-auto"
+              src={styleguide}
+              alt="Screenshot of styleguide"
+              loading="lazy"
+            />
+            <figcaption class="text-2xl mt-3">f. Styleguide</figcaption>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-6 md:sticky">
+        <dl class="grid grid-cols-4 text-2xl">
+          <dt class="col-span-1">Scope</dt>
+          <dd class="col-span-3">
+            <ul class="list-none">
+              <li>Visual Design</li>
+              <lli>Wireframing</lli>
+              <li>Prototyping</li>
+              <li>Development</li>
+              <li>Design System</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl">
+          <span class="-ml-1 pr-4">👇</span> Up next
+        </h2>
+      </div>
+
+      <LinkList
+        links={[
+          {
+            url: "/work/climate-salad",
+            title: "Climate Salad",
+            description: "View case study",
+          },
+          {
+            url: "/work",
+            title: "Work",
+            description: "See my full project list and work history.",
+          },
+          {
+            url: "/contact",
+            title: "Contact",
+            description: "Have a project to discuss? Get in touch.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 37, 37, 37;
+  }
+</style>
