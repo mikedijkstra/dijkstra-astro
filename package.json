@@ -10,14 +10,17 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.3",
+    "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^4.0.8",
+    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.0",
     "@types/alpinejs": "^3.13.11",
     "@types/canvas-confetti": "^1.9.0",
     "alpinejs": "^3.14.8",
     "astro": "^5.2.1",
     "canvas-confetti": "^1.9.3",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

@@ -1,0 +1,68 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import LinkList from "../components/LinkList.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description, pubDate, readingTime, relatedLinks = [] } = frontmatter;
+---
+
+<BaseLayout
+  pageTitle={`${title} - Mike Dijkstra's Blog`}
+  pageDescription={description}
+  logo="true"
+  bodyClass="bg-eerie text-white font-sans"
+>
+  <article class="space-y-24 py-24 px-6">
+    <header class="max-w-4xl mx-auto space-y-6 text-center">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl leading-tight">{title}</h1>
+      {description && (
+        <p class="text-xl sm:text-2xl max-w-3xl mx-auto">{description}</p>
+      )}
+      <div class="flex justify-center gap-4 text-lg">
+        {pubDate && <time>{new Date(pubDate).toLocaleDateString('en-AU', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })}</time>}
+        {readingTime && <span>• {readingTime}</span>}
+      </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-xl prose-invert max-w-none">
+        <slot />
+      </div>
+    </div>
+
+    {relatedLinks.length > 0 && (
+      <div class="space-y-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl">
+            <span class="-ml-1 pr-4">👇</span> More posts
+          </h2>
+        </div>
+
+        <LinkList links={relatedLinks} />
+      </div>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 35, 31, 22;
+  }
+
+  /* Enhanced prose styles for hanging lists on larger screens */
+  @media (min-width: 768px) {
+    .prose ul,
+    .prose ol {
+      padding-left: 0;
+      margin-left: -1.5rem;
+    }
+    
+    .prose li {
+      padding-left: 1.5rem;
+    }
+  }
+</style>
