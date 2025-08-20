@@ -6,6 +6,8 @@ export interface Link {
   title: string;
   description: string;
   hidden?: boolean;
+  date?: string;
+  readingTime?: string;
 }
 
 interface Props {
@@ -31,6 +33,25 @@ const { links, className } = Astro.props;
           <p class="sm:leading-relaxed text-md sm:text-xl">
             {link.description}
           </p>
+          {(link.date || link.readingTime) && (
+            <div class="flex gap-4 text-sm mt-3">
+              {link.date && (
+                <time>
+                  {new Date(link.date).toLocaleDateString("en-AU", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              )}
+              {link.readingTime && (
+                <>
+                  <span>•</span>
+                  <span>{link.readingTime}</span>
+                </>
+              )}
+            </div>
+          )}
           <div class="absolute right-6 group-hover:right-4 w-6 top-8 sm:top-1/2 sm:-translate-y-1/2 duration-300 ease-out">
             <ArrowRight />
           </div>

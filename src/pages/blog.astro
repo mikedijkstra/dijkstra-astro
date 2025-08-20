@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkList from "../components/LinkList.astro";
+import { getCollection } from "astro:content";
+
+// Get all blog posts and sort by date (newest first)
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Transform blog posts for LinkList component
+const links = posts.map(post => ({
+  url: `/blog/${post.id}`,
+  title: post.data.title,
+  description: post.data.description,
+  date: post.data.pubDate.toISOString(),
+  readingTime: post.data.readingTime,
+}));
+---
+
+<BaseLayout
+  pageTitle="Mike Dijkstra's Blog - Web & Mobile Designer–Developer"
+  pageDescription="Thoughts on design, development, and digital product creation by Mike Dijkstra."
+  logo="true"
+  bodyClass="bg-midnight-purple text-white font-sans"
+>
+  <div class="space-y-24 py-24 px-6">
+    <div
+      class="max-w-6xl text-4xl sm:text-6xl lg:text-8xl leading-12 sm:leading-16 lg:leading-24 mx-auto space-y-6 text-center"
+    >
+      <h1>
+        Thoughts on design, development, and digital product creation.
+      </h1>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <LinkList links={links} />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --nav-rgb: 6, 22, 38;
+  }
+</style>
